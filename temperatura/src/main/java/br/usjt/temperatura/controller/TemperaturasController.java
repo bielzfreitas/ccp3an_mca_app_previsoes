@@ -10,17 +10,16 @@ import br.usjt.temperatura.model.Temperatura;
 import br.usjt.temperatura.repository.TemperaturaRepository;
 
 @Controller
-public class TemperaturasController 
-{
+public class TemperaturasController {
 
 	@Autowired
-	private TemperaturaRepository repository;
+	private TemperaturaRepository service;
 
 	@GetMapping("/temperaturas")
-	private ModelAndView listarTemperaturas() throws IOException 
-	{
+	private ModelAndView listarTemperaturas() throws IOException {
+		System.out.println("Entrando em /previsoes");
 		ModelAndView modelAndView = new ModelAndView("lista_temperaturas");
-		List<Temperatura> temperaturas = repository.findAll();
+		List<Temperatura> temperaturas = service.findAll();
 		modelAndView.addObject("temperaturas", temperaturas);
 		return modelAndView;
 	}
