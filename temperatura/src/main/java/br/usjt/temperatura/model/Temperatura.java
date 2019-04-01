@@ -4,13 +4,12 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import br.usjt.temperatura.model.DiaSemana;
 
 @Entity
 public class Temperatura 
@@ -23,6 +22,9 @@ public class Temperatura
 	private Double temperaturaMaxima;
 	private Double humidade;
 	private String descricao;
+	
+	@OneToOne
+	private DiaSemana diaSemana;
 	
 	@Column(nullable = true)
 	@Temporal(TemporalType.TIMESTAMP)
@@ -106,5 +108,13 @@ public class Temperatura
 	}
 	public void setLongitude(String longitude) {
 		this.longitude = longitude;
+	}
+	
+	public DiaSemana getDiaSemana() {
+		return diaSemana;
+	}
+	
+	public void setDiaSemana(DiaSemana diaSemana) {
+		this.diaSemana = diaSemana;
 	}
 }

@@ -20,7 +20,7 @@
 		<table class="table">
 		<thead>
 			<tr>
-				<th>Dia</th>
+				<th>Dia da Semana</th>
 				<th>Temperatura Mínima</th>
 				<th>Temperatura Máxima</th>
 				<th>Humidade</th>
@@ -29,7 +29,7 @@
 		</thead>
 		<tbody>
 			<tr th:each="temperaturas : ${temperaturas}">
-				<td th:text="${temperaturas.dia}"></td>
+				<td th:text="${temperaturas.diaSemana.diaSemana}"></td>
 				<td th:text="${temperaturas.temperaturaMinima}+'°'"></td>
 				<td th:text="${temperaturas.temperaturaMaxima}+'°'"></td>
 				<td th:text="${temperaturas.humidade}+'%'"></td>
