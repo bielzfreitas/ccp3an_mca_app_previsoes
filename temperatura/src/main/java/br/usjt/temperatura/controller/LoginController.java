@@ -13,10 +13,8 @@ import br.usjt.temperatura.service.LoginService;
 
 @Controller
 public class LoginController {
-	
 	@Autowired
 	private LoginService loginService;
-
 	@GetMapping(value = { "/login", "/" })
 	public ModelAndView login() {
 		ModelAndView mv = new ModelAndView("login");
@@ -26,17 +24,10 @@ public class LoginController {
 
 	@PostMapping("/fazerLogin")
 	public String fazerLogin(HttpServletRequest request, Usuario usuario) {
-		System.out.println("Verificando se o usuario existe");
-		
 		if (loginService.logar(usuario)) {
-			System.out.println("Entrando");
-			request.getSession().setAttribute("usuarioLogado", usuario);
-			System.out.println("Redirecionando para previsoes");
-			return "redirect:previsoes";
-		}
-		
-		else 
-		{
+			request.getSession().setAttribute("usuarioLogado",usuario);
+			return "redirect:temperatura";
+		} else {
 			return "login";
 		}
 	}
