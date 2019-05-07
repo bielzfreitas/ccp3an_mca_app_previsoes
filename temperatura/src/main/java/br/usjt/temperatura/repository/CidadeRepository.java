@@ -3,9 +3,9 @@ package br.usjt.temperatura.repository;
 import java.util.List;
 import java.util.concurrent.Future;
 
-import org.jboss.logging.Param;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.scheduling.annotation.Async;
 
 import br.usjt.temperatura.model.Cidade;

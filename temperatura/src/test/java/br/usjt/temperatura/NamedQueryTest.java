@@ -6,7 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import br.usjt.temperatura.repository.CidadeRepository;;
+import br.usjt.temperatura.repository.CidadeRepository;
+import br.usjt.temperatura.model.Cidade;
 
 @SpringBootTest
 @RunWith (SpringRunner.class)

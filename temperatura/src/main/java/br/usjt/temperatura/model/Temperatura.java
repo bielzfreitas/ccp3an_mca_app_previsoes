@@ -27,7 +27,7 @@ public class Temperatura implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private String cidade;
+	private String nomeCidade;
 	private String dataHora;
 	private String tempMax;
 	private String tempMin;
@@ -51,27 +51,26 @@ public class Temperatura implements Serializable{
 	@JoinColumn(name="id_cidade")
 	private Cidade cidade;
 	
-	public Cidade getCidade() {
+	public Cidade getnomeCidade() {
 		return cidade;
 	}
-	public void setCidade(Cidade cidade) {
+	
+	public void setnomeCidade(Cidade cidade) {
 		this.cidade = cidade;
 	}
-	
 	
 	public Long getId() {
 		return id;
 	}
+	
 	public void setId(Long id) {
 		this.id = id;
 	}
 	
-	public String getCidade() {
-		return cidade;
-	}
-	public void setCidade(String cidade) {
+	public void setnomeCidade(String cidade) {
 		this.cidade = cidade;
 	}
+	
 	public String getDataHora() {
 		return dataHora;
 	}
@@ -79,27 +78,35 @@ public class Temperatura implements Serializable{
 	public void setDataHora(String dataHora) {
 		this.dataHora = dataHora;
 	}
+	
 	public String getTempMax() {
 		return tempMax;
 	}
+	
 	public void setTempMax(String tempMax) {
 		this.tempMax = tempMax;
 	}
+	
 	public String getTempMin() {
 		return tempMin;
 	}
+	
 	public void setTempMin(String tempMin) {
 		this.tempMin = tempMin;
 	}
+	
 	public String getUmidade() {
 		return umidade;
 	}
+	
 	public void setUmidade(String umidade) {
 		this.umidade = umidade;
 	}
+	
 	public String getTexto() {
 		return texto;
 	}
+	
 	public void setTexto(String texto) {
 		this.texto = texto;
 	}
@@ -123,51 +130,70 @@ public class Temperatura implements Serializable{
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
+		
 		if (obj == null)
 			return false;
+		
 		if (getClass() != obj.getClass())
 			return false;
 		Temperatura other = (Temperatura) obj;
+		
 		if (cidade == null) {
 			if (other.cidade != null)
 				return false;
-		} else if (!cidade.equals(other.cidade))
+		} 
+		else if (!cidade.equals(other.cidade))
 			return false;
+		
 		if (dataHora == null) {
 			if (other.dataHora != null)
 				return false;
-		} else if (!dataHora.equals(other.dataHora))
+		} 
+		else if (!dataHora.equals(other.dataHora))
 			return false;
+		
 		if (diaSemana == null) {
 			if (other.diaSemana != null)
 				return false;
-		} else if (!diaSemana.equals(other.diaSemana))
+		} 
+		else if (!diaSemana.equals(other.diaSemana))
 			return false;
+		
 		if (id == null) {
 			if (other.id != null)
 				return false;
-		} else if (!id.equals(other.id))
+		} 
+		else if (!id.equals(other.id))
 			return false;
+		
 		if (tempMax == null) {
 			if (other.tempMax != null)
 				return false;
-		} else if (!tempMax.equals(other.tempMax))
+		} 
+		else if (!tempMax.equals(other.tempMax))
 			return false;
+		
 		if (tempMin == null) {
 			if (other.tempMin != null)
 				return false;
-		} else if (!tempMin.equals(other.tempMin))
+		} 
+		else if (!tempMin.equals(other.tempMin))
 			return false;
+		
 		if (texto == null) {
 			if (other.texto != null)
 				return false;
-		} else if (!texto.equals(other.texto))
+		} 
+		else if (!texto.equals(other.texto))
 			return false;
+		
 		if (umidade == null) {
 			if (other.umidade != null)
 				return false;
-		} else if (!umidade.equals(other.umidade))
+		} 
+		else if (!umidade.equals(other.umidade))
 			return false;
+		
 		return true;
 	}
 	

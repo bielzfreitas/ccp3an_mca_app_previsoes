@@ -9,6 +9,7 @@ import br.usjt.temperatura.model.Temperatura;
 
 @Repository
 public interface TemperaturaRepository extends JpaRepository<Temperatura, Long>{
-		public Temperatura findByCidade (String latitude);
+		public Temperatura findByLatitude (String latitude);
+		public Temperatura findByLongitude (String longitude);
 		public List <Cidade> queryByNome (String nome);
 		}

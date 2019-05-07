@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import br.usjt.temperatura.repository.CidadeRepository;
+import br.usjt.temperatura.model.Cidade;
 
 @SpringBootTest
 @RunWith (SpringRunner.class)
@@ -20,10 +21,10 @@ public class AsyncQueryTest {
 	public void testFindAllAssincrono () throws InterruptedException, ExecutionException {
 		Future <List <Cidade> > future = cidadeRepo.findByNome("São Paulo");
 		System.out.println("São Paulo");
-		System.out.println("SPS");
-		List <Cidade> cidade = future.get();
+		System.out.println("SP");
+		List <Cidade> cidades = future.get();
 		for (Cidade cidade : cidades) {
-			System.out.println(cidade);
+			System.out.println(cidades);
 		}
 	}
 }
