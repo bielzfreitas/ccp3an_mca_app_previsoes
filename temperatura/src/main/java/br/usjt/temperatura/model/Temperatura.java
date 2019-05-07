@@ -1,19 +1,14 @@
 package br.usjt.temperatura.model;
 
 import java.io.Serializable;
-import java.util.Date;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import br.usjt.temperatura.model.DiaSemana;
 import br.usjt.temperatura.model.Temperatura;
 import br.usjt.temperatura.model.Cidade;
@@ -27,14 +22,11 @@ public class Temperatura implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private String nomeCidade;
 	private String dataHora;
 	private String tempMax;
 	private String tempMin;
 	private String umidade;
 	private String texto;
-	private String latitude;
-	private String longitude;
 	
 	@OneToOne(optional = false)
 	@JoinColumn(name="id_dia")
@@ -65,10 +57,6 @@ public class Temperatura implements Serializable{
 	
 	public void setId(Long id) {
 		this.id = id;
-	}
-	
-	public void setnomeCidade(String cidade) {
-		this.cidade = cidade;
 	}
 	
 	public String getDataHora() {
